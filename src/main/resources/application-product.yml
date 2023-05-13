@@ -1,0 +1,8 @@
+
+server:
+  # 定义访问端口
+  port: 80
+  #address: 127:0:0:1
+  # 定义访问链接顶层路径
+  servlet:
+    context-path: /jcy
