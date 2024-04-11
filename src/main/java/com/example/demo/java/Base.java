@@ -14,7 +14,7 @@ public class Base {
         // 月份日历显示
         calendar();
 
-        // 三角函数
+        // 杨辉三角
         three();
 
         // 利率计算
@@ -43,7 +43,7 @@ public class Base {
     }
 
     private static void codePointCount() {
-        String str = "java\u2122";
+        String str = "java™";
 
         int indexS = str.indexOf("a");
         System.out.println(indexS);
@@ -125,7 +125,7 @@ public class Base {
 
         System.out.println("You will retire " + year + " years old.");
 
-        String  input = "";
+        String input;
         do {
             balance += payment;
             double interest = (balance * interestRate) / 100;
@@ -198,7 +198,7 @@ public class Base {
         for (int i = 0; i < 10; i++) {
             bl[i] = true;
         }
-        System.out.println(Arrays.toString(b));
+        System.out.println(Arrays.toString(bl));
     }
 
     // 抽奖
@@ -247,8 +247,8 @@ public class Base {
             }
         }
 
-        for (int i = 0; i < rates.length; i++) {
-            System.out.printf("%9.2f%%", rates[i] * 100);
+        for (double rate : rates) {
+            System.out.printf("%9.2f%%", rate * 100);
         }
         System.out.println();
 
@@ -287,7 +287,7 @@ public class Base {
 
     // 日历计算
     private static void calendar() {
-        LocalDate date = LocalDate.of(2023,04,8);
+        LocalDate date = LocalDate.of(2023, 4, 8);
         System.out.println(date);
         int month = date.getMonthValue();
         int today = date.getDayOfMonth();
