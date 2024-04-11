@@ -1,4 +1,4 @@
-package com.example.demo.jcy;
+package com.example.demo.springboot;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
