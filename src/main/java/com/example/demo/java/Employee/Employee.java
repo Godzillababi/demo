@@ -1,17 +1,48 @@
-package com.example.demo.java;
+package com.example.demo.java.Employee;
 
 import java.time.LocalDate;
 
 public class Employee {
 
+    private static int nextId = 1;
+
     private String name;
     private double salary;
     private LocalDate hireDay;
+    private int id;
+
+    public Employee(String name) {
+        this(name, 15000);
+    }
+
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+        this.id = 0;
+    }
+
+    public static void main(String[] args) {
+        Employee employee = new Employee("jcy", 5000);
+        System.out.println("name: " + employee.getName() + " salary: " + employee.getSalary());
+    }
 
     public Employee(String name, double salary, int year, int month, int day) {
         this.hireDay = LocalDate.of(year, month, day);
         this.name = name;
         this.salary = salary;
+    }
+
+    public static int getNextId() {
+        return nextId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = nextId;
+        nextId++;
     }
 
     public String getName() {

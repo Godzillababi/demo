@@ -1,7 +1,8 @@
-package com.example.demo.java;
+package com.example.demo.java.Employee;
 
 public class EmployeeTest {
     public static void main(String[] args) {
+
         Employee[] employees = new Employee[3];
         employees[0] = new Employee("jcy", 13500, 1995, 5, 20);
         employees[1] = new Employee("cxy", 5600, 1995, 7, 30);
@@ -12,7 +13,8 @@ public class EmployeeTest {
         }
 
         for (Employee employee : employees) {
-            System.out.println("name: " + employee.getName() + ", salary: " + employee.getSalary() + " hirDay: " + employee.getHireDay());
+            System.out.println("name: " + employee.getName() + ", salary: " + employee.getSalary() + " hirDay: " +
+                    employee.getHireDay());
         }
 
 
