@@ -1,5 +1,7 @@
 package com.example.demo.java.Employee;
 
+import static java.lang.System.out;
+
 public class ConstructorTest {
     public static void main(String[] args) {
         Employee[] staff = new Employee[3];
@@ -8,7 +10,7 @@ public class ConstructorTest {
         staff[2] = new Employee();
 
         for (Employee e : staff) {
-            System.out.println("name: " + e.getName() + ", salary: " + e.getSalary() + ", id: " + e.getId());
+            out.println("name: " + e.getName() + ", salary: " + e.getSalary() + ", id: " + e.getId());
         }
     }
 }
