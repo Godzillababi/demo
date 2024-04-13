@@ -1,15 +1,30 @@
 package com.example.demo.java.Employee;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 public class Employee {
 
-    private static int nextId = 1;
+    private static int nextId;
 
-    private String name;
+    static {
+        Random generator = new Random();
+        nextId = generator.nextInt(1000);
+    }
     private double salary;
     private LocalDate hireDay;
     private int id;
+
+    private String name = "";
+
+    {
+        id = nextId;
+        nextId++;
+    }
+
+    public Employee() {
+
+    }
 
     public Employee(String name) {
         this(name, 15000);
