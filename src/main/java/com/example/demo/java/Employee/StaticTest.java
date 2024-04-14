@@ -9,7 +9,6 @@ public class StaticTest {
         staff[2] = new Employee("gqp", 15000);
 
         for (Employee e : staff) {
-            e.setId();
             int id = Employee.getNextId();
             System.out.println("name: " + e.getName() + " salary: " + e.getSalary() + " id: " + e.getId());
             System.out.println("id: " + id + " salary: " + e.getSalary());

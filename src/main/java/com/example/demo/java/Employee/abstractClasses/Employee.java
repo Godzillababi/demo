@@ -1,4 +1,4 @@
-package com.example.demo.java.Employee;
+package com.example.demo.java.Employee.abstractClasses;
 
 import java.time.LocalDate;
 import java.util.Random;
@@ -9,7 +9,7 @@ import java.util.Random;
  * @author jcy
  * @since 2024.04.11
  */
-public class Employee {
+public class Employee extends Person {
 
     private static int nextId;
 
@@ -17,34 +17,19 @@ public class Employee {
         Random generator = new Random();
         nextId = generator.nextInt(1000);
     }
+
     private double salary;
     private LocalDate hireDay;
     private int id;
-
-    private String name = "";
 
     {
         id = nextId;
         nextId++;
     }
 
-    public Employee() {
-
-    }
-
-    public Employee(String name) {
-        this(name, 15000);
-    }
-
-    public Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-        this.id = 0;
-    }
-
     public Employee(String name, double salary, int year, int month, int day) {
+        super(name);
         this.hireDay = LocalDate.of(year, month, day);
-        this.name = name;
         this.salary = salary;
     }
 
@@ -61,14 +46,6 @@ public class Employee {
         nextId++;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getSalary() {
         return salary;
     }
@@ -83,6 +60,11 @@ public class Employee {
 
     public void setHireDay(LocalDate hireDay) {
         this.hireDay = hireDay;
+    }
+
+    @Override
+    public String getDesignation() {
+        return String.format("an employee with a salary of $%.2f", salary);
     }
 
     /**
