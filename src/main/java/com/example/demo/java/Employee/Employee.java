@@ -3,6 +3,12 @@ package com.example.demo.java.Employee;
 import java.time.LocalDate;
 import java.util.Random;
 
+/**
+ * 员工对象类
+ *
+ * @author jcy
+ * @since 2024.04.11
+ */
 public class Employee {
 
     private static int nextId;
@@ -84,6 +90,11 @@ public class Employee {
         this.hireDay = hireDay;
     }
 
+    /**
+     * Raise the salary of an employee.
+     *
+     * @param raise the percentage by which to raise the salary(e.g. 10 means 10%)
+     */
     public void raiseSalary(double raise) {
         double newSalary = this.salary * raise / 100;
         this.salary += newSalary;
