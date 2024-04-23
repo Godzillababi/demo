@@ -20,19 +20,6 @@ public class Manager extends Employee {
         this.setHireDay(birthDay);
     }
 
-    public static void main(String[] args) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        System.out.println(calendar.get(Calendar.YEAR));
-        // MONTH 月，从0开始算起，最大11；0代表1月，11代表12月
-        System.out.println(calendar.get(Calendar.MONTH));
-        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
-        System.out.println(calendar.get(Calendar.HOUR_OF_DAY));
-        System.out.println(calendar.get(Calendar.MINUTE));
-        System.out.println(calendar.get(Calendar.SECOND));
-        System.out.println(calendar.get(Calendar.MILLISECOND));
-    }
-
     public double getBonus() {
         return bonus;
     }
@@ -44,5 +31,17 @@ public class Manager extends Employee {
     @Override
     public double getSalary() {
         return super.getSalary() + bonus;
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        if (!super.equals(otherObject)) {
+            return false;
+        }
+        Manager other = (Manager) otherObject;
+        if (Double.doubleToLongBits(this.bonus) != Double.doubleToLongBits(other.bonus)) {
+            return false;
+        }
+        return true;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.demo.java.Employee;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -17,6 +18,7 @@ public class Employee {
         Random generator = new Random();
         nextId = generator.nextInt(1000);
     }
+
     private double salary;
     private LocalDate hireDay;
     private int id;
@@ -93,6 +95,16 @@ public class Employee {
     public void raiseSalary(double raise) {
         double newSalary = this.salary * raise / 100;
         this.salary += newSalary;
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        if (this == otherObject) return true;
+        if (otherObject == null) return false;
+        if (this.getClass() != otherObject.getClass()) return false;
+        Employee employee = (Employee) otherObject;
+        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) &&
+                Objects.equals(this.salary, employee.salary) && Objects.equals(this.hireDay, employee.hireDay);
     }
 
 }
