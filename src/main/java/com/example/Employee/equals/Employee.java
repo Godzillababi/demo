@@ -1,8 +1,7 @@
-package com.example.demo.java.Employee.bean;
+package com.example.Employee.equals;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.Random;
 
 /**
  * 员工对象类
@@ -12,55 +11,14 @@ import java.util.Random;
  */
 public class Employee {
 
-    private static int nextId;
-
-    static {
-        Random generator = new Random();
-        nextId = generator.nextInt(1000);
-    }
-
+    private String name = "";
     private double salary;
     private LocalDate hireDay;
-    private int id;
-
-    private String name = "";
-
-    {
-        id = nextId;
-        nextId++;
-    }
-
-    public Employee() {
-
-    }
-
-    public Employee(String name) {
-        this(name, 15000);
-    }
-
-    public Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-        this.id = 0;
-    }
 
     public Employee(String name, double salary, int year, int month, int day) {
         this.hireDay = LocalDate.of(year, month, day);
         this.name = name;
         this.salary = salary;
-    }
-
-    public static int getNextId() {
-        return nextId;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId() {
-        this.id = nextId;
-        nextId++;
     }
 
     public String getName() {
@@ -103,13 +61,17 @@ public class Employee {
         if (otherObject == null) return false;
         if (this.getClass() != otherObject.getClass()) return false;
         Employee employee = (Employee) otherObject;
-        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) &&
+        return Objects.equals(this.name, employee.name) &&
                 Objects.equals(this.salary, employee.salary) && Objects.equals(this.hireDay, employee.hireDay);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.id, this.name, this.salary, this.hireDay);
+        return Objects.hash(this.name, this.salary, this.hireDay);
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{" + name + ", " + salary + ", " + hireDay + "}";          // ;
+    }
 }

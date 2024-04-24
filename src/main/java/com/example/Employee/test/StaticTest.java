@@ -1,6 +1,6 @@
-package com.example.demo.java.Employee.test;
+package com.example.Employee.test;
 
-import com.example.demo.java.Employee.bean.Employee;
+import com.example.Employee.bean.Employee;
 
 public class StaticTest {
 

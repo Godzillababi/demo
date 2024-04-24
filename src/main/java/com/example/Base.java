@@ -1,4 +1,4 @@
-package com.example.demo.java;
+package com.example;
 
 import java.math.BigInteger;
 import java.time.DayOfWeek;

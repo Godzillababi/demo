@@ -1,4 +1,4 @@
-package com.example.demo.java.Employee.equals;
+package com.example.Employee.equals;
 
 public class EqualsTest {
     public static void main(String[] args) {

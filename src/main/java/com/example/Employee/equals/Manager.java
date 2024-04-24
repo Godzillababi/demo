@@ -1,6 +1,4 @@
-package com.example.demo.java.Employee.equals;
-
-import java.time.LocalDate;
+package com.example.Employee.equals;
 
 public class Manager extends Employee {
     private double bonus;

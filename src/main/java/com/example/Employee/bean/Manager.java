@@ -1,4 +1,4 @@
-package com.example.demo.java.Employee.bean;
+package com.example.Employee.bean;
 
 import java.time.LocalDate;
 

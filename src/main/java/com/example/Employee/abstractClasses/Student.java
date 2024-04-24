@@ -1,4 +1,4 @@
-package com.example.demo.java.Employee.abstractClasses;
+package com.example.Employee.abstractClasses;
 
 public class Student extends Person {
 
