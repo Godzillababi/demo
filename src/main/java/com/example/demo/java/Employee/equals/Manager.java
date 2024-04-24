@@ -1,23 +1,13 @@
-package com.example.demo.java.Employee;
+package com.example.demo.java.Employee.equals;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 
 public class Manager extends Employee {
     private double bonus;
 
-    public Manager(String name, double salary) {
-        // 调用超类中构造器参数为name，salary 的方法
-        super(name, salary);
-        bonus = 0;
-    }
-
-    public Manager(String firstName, LocalDate birthDay, double salary, double bonus) {
-        this.setName(firstName);
-        this.setBonus(bonus);
-        this.setSalary(salary);
-        this.setHireDay(birthDay);
+    public Manager(String name, double salary, int year, int month, int day) {
+        super(name, salary, year, month, day);
+        bonus = 0.0;
     }
 
     public double getBonus() {
@@ -43,5 +33,16 @@ public class Manager extends Employee {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = super.hashCode() + 17 * Double.hashCode(bonus);
+        return hash;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", bonus: " + bonus;
     }
 }

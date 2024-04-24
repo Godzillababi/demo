@@ -1,4 +1,4 @@
-package com.example.demo.java.Employee;
+package com.example.demo.java.Employee.bean;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -105,6 +105,11 @@ public class Employee {
         Employee employee = (Employee) otherObject;
         return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) &&
                 Objects.equals(this.salary, employee.salary) && Objects.equals(this.hireDay, employee.hireDay);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id, this.name, this.salary, this.hireDay);
     }
 
 }
