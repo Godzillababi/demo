@@ -1,4 +1,4 @@
-package com.example.Employee.enums;
+package com.example.enums;
 
 import java.util.Scanner;
 

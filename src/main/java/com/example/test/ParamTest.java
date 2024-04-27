@@ -1,6 +1,6 @@
-package com.example.Employee.test;
+package com.example.test;
 
-import com.example.Employee.bean.Employee;
+import com.example.bean.Employee;
 
 public class ParamTest {
     public static void main(String[] args) {

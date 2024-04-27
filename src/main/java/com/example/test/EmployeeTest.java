@@ -1,8 +1,8 @@
-package com.example.Employee.test;
+package com.example.test;
 
-import com.example.Employee.bean.Employee;
-import com.example.Employee.bean.Executive;
-import com.example.Employee.bean.Manager;
+import com.example.bean.Employee;
+import com.example.bean.Executive;
+import com.example.bean.Manager;
 
 import java.time.LocalDate;
 

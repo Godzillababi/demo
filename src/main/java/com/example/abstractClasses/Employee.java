@@ -1,7 +1,6 @@
-package com.example.Employee.bean;
+package com.example.abstractClasses;
 
 import java.time.LocalDate;
-import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -10,7 +9,7 @@ import java.util.Random;
  * @author jcy
  * @since 2024.04.11
  */
-public class Employee {
+public class Employee extends Person {
 
     private static int nextId;
 
@@ -23,30 +22,14 @@ public class Employee {
     private LocalDate hireDay;
     private int id;
 
-    private String name = "";
-
     {
         id = nextId;
         nextId++;
     }
 
-    public Employee() {
-
-    }
-
-    public Employee(String name) {
-        this(name, 15000);
-    }
-
-    public Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-        this.id = 0;
-    }
-
     public Employee(String name, double salary, int year, int month, int day) {
+        super(name);
         this.hireDay = LocalDate.of(year, month, day);
-        this.name = name;
         this.salary = salary;
     }
 
@@ -61,14 +44,6 @@ public class Employee {
     public void setId() {
         this.id = nextId;
         nextId++;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public double getSalary() {
@@ -87,6 +62,11 @@ public class Employee {
         this.hireDay = hireDay;
     }
 
+    @Override
+    public String getDesignation() {
+        return String.format("an employee with a salary of $%.2f", salary);
+    }
+
     /**
      * Raise the salary of an employee.
      *
@@ -95,21 +75,6 @@ public class Employee {
     public void raiseSalary(double raise) {
         double newSalary = this.salary * raise / 100;
         this.salary += newSalary;
-    }
-
-    @Override
-    public boolean equals(Object otherObject) {
-        if (this == otherObject) return true;
-        if (otherObject == null) return false;
-        if (this.getClass() != otherObject.getClass()) return false;
-        Employee employee = (Employee) otherObject;
-        return Objects.equals(this.id, employee.id) && Objects.equals(this.name, employee.name) &&
-                Objects.equals(this.salary, employee.salary) && Objects.equals(this.hireDay, employee.hireDay);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.id, this.name, this.salary, this.hireDay);
     }
 
 }

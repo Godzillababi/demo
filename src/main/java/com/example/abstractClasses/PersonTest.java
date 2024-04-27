@@ -1,4 +1,4 @@
-package com.example.Employee.abstractClasses;
+package com.example.abstractClasses;
 
 public class PersonTest {
     public static void main(String[] args) {

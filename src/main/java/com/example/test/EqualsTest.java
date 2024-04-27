@@ -1,7 +1,7 @@
-package com.example.Employee.test;
+package com.example.test;
 
-import com.example.Employee.bean.Employee;
-import com.example.Employee.bean.Manager;
+import com.example.bean.Employee;
+import com.example.bean.Manager;
 
 public class EqualsTest {
     public static void main(String[] args) {

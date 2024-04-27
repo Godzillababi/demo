@@ -1,4 +1,4 @@
-package com.example.Employee.equals;
+package com.example.equals;
 
 import java.time.LocalDate;
 import java.util.Objects;

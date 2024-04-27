@@ -1,4 +1,4 @@
-package com.example.Employee.abstractClasses;
+package com.example.abstractClasses;
 
 public abstract class Person {
 
