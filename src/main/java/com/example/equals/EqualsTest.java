@@ -1,7 +1,4 @@
-package com.example.Employee.equals;
-
-import com.example.equals.Manager;
-import com.example.equals.Employee;
+package com.example.equals;
 
 public class EqualsTest {
     public static void main(String[] args) {
